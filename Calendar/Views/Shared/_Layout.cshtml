@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Calendar</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Calendar.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/MyStyle.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="display:flex; justify-content: center;">
+            <div style="width: 70%; ">
+                <div class="container-fluid" style="display: flex;" >
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" style="display: inline-flex; justify-content:space-between; flex:1;">
+
+                        <div style="display:flex; align-items: center;">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </div>
+
+                        <ul class="navbar-nav flex-grow-1" style="display:flex; justify-content: flex-end;">
+                            <li class="navbar_button"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Вход</a> </li>
+                            <li class="navbar_button"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Регистрация</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+
+
+    <div class="container" style="margin-top:10px; height:1000px;">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
